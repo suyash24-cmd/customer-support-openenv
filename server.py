@@ -1,5 +1,5 @@
 import uuid
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import Dict, Optional
@@ -26,8 +26,11 @@ class StepRequest(BaseModel):
 # Endpoints
 # ---------------------------------------------------------------------------
 @app.post("/reset")
-def reset_env(req: ResetRequest = ResetRequest()):
+def reset_env(req: Optional[ResetRequest] = Body(None)):
     """Reset the environment. session_id is auto-generated if not supplied."""
+    if req is None:
+        req = ResetRequest()
+    
     session_id = req.session_id or str(uuid.uuid4())
     task_level = req.task_level or "easy"
 
