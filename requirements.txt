@@ -1,0 +1,12 @@
+pydantic>=2.5.0
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+google-genai>=0.3.0
+google-adk>=2.0.0
+google-cloud-firestore>=2.16.0
+python-dotenv>=1.0.1
+
+# Testing (optional, but included so `pytest` works out of the box)
+pytest>=8.0.0
+pytest-mock>=3.12.0
+httpx>=0.27.0

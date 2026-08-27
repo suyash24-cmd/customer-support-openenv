@@ -1,0 +1,33 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Virtual environments (NOTE: the `env/` directory at repo root is the
+# OpenEnv package, not a venv — never ignore it)
+.venv/
+venv/
+my-env/
+*.egg-info/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Google Cloud service account keys (never commit these)
+*service-account*.json
+*credentials*.json
+gcloud-service-key.json

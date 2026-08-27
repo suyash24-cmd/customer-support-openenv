@@ -1,0 +1,11 @@
+name: "customer-support-resolution"
+description: "A production-grade environment simulating customer support troubleshooting, KB search, and resolution."
+version: "1.0.0"
+action_space: "Action(action_type: Literal['Reply', 'SearchKB', 'IssueRefund', 'Escalate', 'CloseTicket'], content: Optional[str], amount: Optional[float])"
+observation_space: "Observation(ticket: Ticket, customer_context: CustomerContext, kb_search_results: Optional[str], conversation_history: List[str], is_escalated: bool, is_closed: bool, last_action_feedback: str)"
+reward_definition: "Dense reward tracking issue resolution progress, penalizing redundant actions, and rewarding appropriate customer satisfaction outcomes based on deterministic graders."
+tags:
+  - openenv
+  - customer-support
+  - agents
+  - real-world
